@@ -55,16 +55,17 @@ Full list in the TODO comments in `index.html`. The blocking ones:
    assembled from public sources, not written by the dentists. Each must approve
    their own card. Missing: qualifications for Dr. Mohd Rusman Adlan and
    Dr. Ahmad Haidhar Izzuddin, and Dr. Aiman's full legal name.
-2. **Photos and raster favicons.** Filenames and sizes are specified in
-   `assets/README.md`. After dropping them in, delete the six `onerror`
-   attributes in `index.html` — they exist only so the page previews with
-   stand-in images.
+2. **Dentist and team photos.** The logo, hero (storefront), share card and
+   favicons are all built from the clinic's real artwork. Still on placeholders:
+   `about-team.jpg` and the four `img/team/` portraits — see `assets/README.md`.
+   After dropping each in, delete that image's `onerror` attribute in `index.html`.
 3. **Final domain.** `alanadlandental.com.my` is a placeholder. It appears in the
    canonical tag, `og:url`, `og:image`, `twitter:image`, and the JSON-LD `@id`
    and `url`.
-4. **Original logo vector.** Every logo file here is hand-traced from supplied
-   images. Fine on screen, not fine for print or fabrication. Replacing it means
-   updating the outline in four places — listed in `assets/README.md`.
+4. **Original logo vector.** The navbar, footer and favicons now use the real logo
+   artwork. But `logo-full.svg` and `logo-3d.html` are still hand-traced — fine on
+   screen, not for print or fabrication. Replacing needs the original vector; see
+   `assets/README.md`.
 5. **Phone number discrepancy.** Clinic artwork shows `03 8926 1697`; the brief
    gave `019-4231697`. Only the brief's numbers are published. Confirm which is
    current.

@@ -29,23 +29,24 @@
 <meta property="og:description" content="A dental clinic in Bandar Baru Bangi, Selangor. General dentistry, braces, implants, whitening and scaling. Open 9am to 9pm daily.">
 <meta property="og:url" content="https://alanadlandental.com.my/">
 <meta property="og:locale" content="en_MY">
-<!-- Asset: assets/img/og-share.jpg — 1200x630 JPG. Clinic exterior or reception.
-     Must be an absolute URL; relative paths are ignored by most share scrapers. -->
+<!-- Asset: assets/img/og-share.jpg — 1200x630, the logo lockup centred on white.
+     Must be an absolute URL; relative paths are ignored by most share scrapers.
+     TODO (optional): a photo-led share card (the storefront, or a fitted-out room)
+     often earns more clicks than a logo. Swap the file if you have one. -->
 <meta property="og:image" content="https://alanadlandental.com.my/assets/img/og-share.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Reception area at Klinik Pergigian Alan Adlan in Bandar Baru Bangi">
+<meta property="og:image:alt" content="Klinik Pergigian Alan Adlan logo">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Dentist in Bandar Baru Bangi | Klinik Pergigian Alan Adlan">
 <meta name="twitter:description" content="A dental clinic in Bandar Baru Bangi, Selangor. Open 9am to 9pm daily.">
 <meta name="twitter:image" content="https://alanadlandental.com.my/assets/img/og-share.jpg">
-<meta name="twitter:image:alt" content="Reception area at Klinik Pergigian Alan Adlan in Bandar Baru Bangi">
+<meta name="twitter:image:alt" content="Klinik Pergigian Alan Adlan logo">
 
-<!-- Favicons. favicon.svg is already built from the logo mark and works today.
-     The raster fallbacks still need exporting — see assets/README.md. -->
-<link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml">
+<!-- Favicons. Generated from the clinic's actual logo artwork (the gold disc mark).
+     See assets/img/source/ for the untouched original. -->
 <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
@@ -199,22 +200,15 @@
 <header id="site-header" class="sticky top-0 z-50 border-b border-line bg-white transition-shadow duration-300">
   <div class="mx-auto flex h-[72px] max-w-site items-center justify-between gap-4 px-5 sm:px-6 lg:px-8">
 
-    <!--
-      LOGO LOCKUP — redrawn from the clinic's artwork: a gold disc with a large
-      white molar sitting in it, beside the two-line wordmark. The tooth outline
-      is shared with assets/favicon/favicon.svg and logo-3d.html; if you adjust
-      it, adjust it in all three.
-
-      TODO (client): this is a hand-traced approximation. Send the original
-      vector file (.ai / .eps / .svg) from whoever made the logo and swap the
-      <path> below for the real outline. At small sizes the difference is
-      invisible, but on the 3D model and any print use it will show.
-    -->
+    <!-- LOGO LOCKUP — the clinic's actual logo mark (assets/img/logo-mark.png,
+         cropped from the original artwork with its white surround made
+         transparent) beside the two-line wordmark. The wordmark is kept as live
+         text for legibility at small sizes and for SEO; the mark carries the
+         brand's own "Alan Adlan" lettering inside the tooth. -->
     <a href="#home" class="flex shrink-0 items-center gap-2.5 sm:gap-3" aria-label="Klinik Pergigian Alan Adlan, home">
-      <svg viewBox="0 0 100 100" class="h-9 w-9 shrink-0 sm:h-10 sm:w-10" aria-hidden="true" focusable="false">
-        <circle cx="50" cy="50" r="50" fill="#C9A227"/>
-        <path fill="#FFFFFF" d="M50 13C54 9 60 8 66 10C74 12 84 16 88 26C92 36 88 48 85 60C82 72 80 88 73 92C67 95 63 86 60 76C57 67 54 64 50 64C46 64 43 67 40 76C37 86 33 95 27 92C20 88 18 72 15 60C12 48 8 36 12 26C16 16 26 12 34 10C40 8 46 9 50 13Z"/>
-      </svg>
+      <img src="assets/img/logo-mark.png" alt=""
+           width="256" height="256" fetchpriority="high"
+           class="h-9 w-9 shrink-0 sm:h-10 sm:w-10">
       <span class="leading-none">
         <span class="block font-display text-[8.5px] font-semibold uppercase tracking-[.18em] text-gold-deep sm:text-[9.5px]">Klinik Pergigian</span>
         <span class="mt-1.5 block font-brand text-[17px] font-semibold leading-none tracking-[.01em] text-ink sm:text-[19px] md:text-[17px] lg:text-[19px]">Alan Adlan</span>
@@ -274,21 +268,20 @@
   <!-- ============================= HERO ============================= -->
   <section id="home" class="relative isolate">
     <!--
-      Asset: assets/img/hero-clinic.jpg — 1920x1080 (16:9), min 1920px wide.
-      Wide landscape shot of the treatment room or reception, warm light,
-      ideally with a staff member in frame.
+      Asset: assets/img/hero-clinic.jpg — the clinic's actual storefront at dusk,
+      the gold tooth signboard lit against the sky. Downsized from the original in
+      assets/img/source/storefront-original.png.
 
-      The onerror attribute falls back to a placeholder so the page still previews
-      before the real file is dropped in. DELETE the onerror attribute once
-      assets/img/hero-clinic.jpg exists.
+      The image is a bright sunset shot, so the text sits over a deliberately heavy
+      ink scrim (measured: the brightest pixel in the text zone needs ~78% coverage
+      to keep white body text at WCAG AA; the layered scrim below clears that).
     -->
     <img src="assets/img/hero-clinic.jpg"
-         onerror="this.onerror=null;this.src='https://picsum.photos/seed/alanadlan-hero/1920/1080'"
-         alt="Treatment room at Klinik Pergigian Alan Adlan in Bandar Baru Bangi"
-         width="1920" height="1080" fetchpriority="high"
-         class="absolute inset-0 -z-10 h-full w-full object-cover">
-    <div class="absolute inset-0 -z-10 bg-ink/70" aria-hidden="true"></div>
-    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-ink/70 via-ink/50 to-transparent" aria-hidden="true"></div>
+         alt="The Klinik Pergigian Alan Adlan storefront in Bandar Baru Bangi, its gold tooth-shaped signboard lit against the evening sky"
+         width="1920" height="934" fetchpriority="high"
+         class="absolute inset-0 -z-10 h-full w-full object-cover object-center">
+    <div class="absolute inset-0 -z-10 bg-ink/65" aria-hidden="true"></div>
+    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-ink/90 via-ink/65 to-ink/25" aria-hidden="true"></div>
 
     <div class="mx-auto max-w-site px-5 py-20 sm:px-6 md:py-28 lg:px-8 lg:py-36">
       <div class="max-w-2xl">
@@ -877,10 +870,9 @@
 
       <div class="md:col-span-5">
         <div class="flex items-center gap-3.5">
-          <svg viewBox="0 0 100 100" class="h-12 w-12 shrink-0" aria-hidden="true">
-            <circle cx="50" cy="50" r="50" fill="#C9A227"/>
-            <path fill="#FFFFFF" d="M50 13C54 9 60 8 66 10C74 12 84 16 88 26C92 36 88 48 85 60C82 72 80 88 73 92C67 95 63 86 60 76C57 67 54 64 50 64C46 64 43 67 40 76C37 86 33 95 27 92C20 88 18 72 15 60C12 48 8 36 12 26C16 16 26 12 34 10C40 8 46 9 50 13Z"/>
-          </svg>
+          <img src="assets/img/logo-mark.png" alt=""
+               width="256" height="256" loading="lazy"
+               class="h-12 w-12 shrink-0">
           <span class="leading-none">
             <span class="block font-display text-[10px] font-semibold uppercase tracking-[.18em] text-gold">Klinik Pergigian</span>
             <span class="mt-1.5 block font-brand text-[22px] font-semibold leading-none text-white">Alan Adlan</span>
