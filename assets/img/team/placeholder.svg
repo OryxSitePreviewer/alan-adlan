@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Portrait coming soon">
+  <!-- Neutral placeholder shown on a dentist card until the real photo is added.
+       Deliberately a plain silhouette, never a stock face, so no stranger is
+       presented as clinic staff. Swap the card's <img src> to the real
+       assets/img/team/dr-*.jpg once the photo is in. -->
+  <rect width="800" height="1000" fill="#EFEAE0"/>
+  <circle cx="400" cy="372" r="150" fill="#CBBE9F"/>
+  <ellipse cx="400" cy="1050" rx="250" ry="300" fill="#CBBE9F"/>
+</svg>

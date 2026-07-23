@@ -169,10 +169,10 @@
     "https://www.facebook.com/kpaa2011/"
   ],
   "employee": [
-    { "@type": "Person", "name": "Dr. Mohd Rusman Adlan B. A. Rahman", "jobTitle": "Principal Dentist" },
-    { "@type": "Person", "name": "Dr. Noor Syafizah", "jobTitle": "General Dentist", "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Malaya" } },
-    { "@type": "Person", "name": "Dr. Ahmad Haidhar Izzuddin", "jobTitle": "Associate Dentist" },
-    { "@type": "Person", "name": "Dr. Aiman", "jobTitle": "Associate Dentist", "alumniOf": { "@type": "CollegeOrUniversity", "name": "Jordan University of Science and Technology" } }
+    { "@type": "Person", "name": "Dr. Mohd Rusman Adlan B. A. Rahman", "jobTitle": "Founder & Principal Dentist" },
+    { "@type": "Person", "name": "Dr. Noor Syafizah", "jobTitle": "Resident Dentist" },
+    { "@type": "Person", "name": "Dr. Ahmad Haidhar Izzuddin", "jobTitle": "Resident Dentist" },
+    { "@type": "Person", "name": "Dr. Khairuldin Majid", "jobTitle": "Resident Dentist" }
   ],
   "availableService": [
     { "@type": "MedicalProcedure", "name": "General Dentistry" },
@@ -366,11 +366,11 @@
             adults who have put off a visit for longer than they would like to admit.
           </p>
           <p>
-            The clinic is led by our Principal Dentist,
+            The clinic was founded by our Principal Dentist,
             <strong class="font-medium text-ink">Dr. Mohd Rusman Adlan B. A. Rahman</strong>,
-            who works alongside the rest of the team across general, orthodontic and
-            restorative care. Many of the people we see were sent by a neighbour, a
-            colleague or a family member who came before them.
+            who works alongside a team of resident dentists across general,
+            orthodontic and restorative care. Many of the people we see were sent by
+            a neighbour, a colleague or a family member who came before them.
           </p>
           <p>
             We keep the clinic open from 9:00 AM to 9:00 PM every day of the week,
@@ -408,27 +408,10 @@
   </section>
 
   <!-- ============================= OUR DENTISTS =============================
-
-       ==========================================================================
-       TODO (client) — SIGN-OFF REQUIRED BEFORE LAUNCH.
-
-       These four profiles were assembled from social media and public listings,
-       not written by the dentists themselves. Every dentist must read and approve
-       their own card before this page goes live. Names, spelling, qualifications
-       and the university/year lines in particular need first-hand confirmation.
-
-       Wording note: interests are written as "special interest in", never
-       "specialist in". Under Malaysian Dental Council advertising rules,
-       "specialist" is reserved for dentists on the National Specialist Register.
-       Do not change this phrasing without checking each dentist's registration.
-
-       Gaps still to fill:
-         - Dr. Mohd Rusman Adlan: no qualification or focus areas supplied.
-         - Dr. Ahmad Haidhar Izzuddin: no qualification supplied.
-         - Dr. Aiman: confirm full legal name for display.
-         - All four: MDC / Malaysian Dental Council registration numbers, if the
-           clinic wants them shown.
-       ==========================================================================
+       Cards are intentionally minimal: photo, name, title. Titles are "Founder &
+       Principal Dentist" for Dr. Mohd Rusman Adlan and "Resident Dentist" for the
+       rest, per the clinic. Photos default to a neutral silhouette placeholder;
+       swap each card's <img src> to the real assets/img/team/dr-*.jpg once added.
   -->
   <section id="team" class="border-t border-line bg-white py-14 md:py-20 lg:py-28">
     <div class="mx-auto max-w-site px-5 sm:px-6 lg:px-8">
@@ -439,81 +422,64 @@
           The team looking after you
         </h2>
         <p class="mt-4 text-[16px] md:text-[17px]">
-          Between them, our dentists cover routine care, root canal treatment,
-          orthodontics and digitally made crowns and dentures. Ask at the front desk
-          if you would like to see a particular dentist and we will work around it.
+          Our founder and resident dentists look after everyday check-ups, braces,
+          root canal treatment and more. Ask at the front desk if you would like to
+          see a particular dentist and we will work around it.
         </p>
       </div>
 
       <div class="mt-10 grid gap-5 sm:grid-cols-2 md:gap-6 lg:mt-14 lg:grid-cols-4">
 
-        <!-- Photos: assets/img/team/*.jpg — 800x1000 (4:5) portraits, consistent
-             framing and background across all four. Delete each onerror once the
-             real file is in place. -->
+        <!--
+          Photos currently show a neutral silhouette placeholder
+          (assets/img/team/placeholder.svg). When a real portrait is added, save it
+          as the filename noted on each card and change that card's <img src> to it,
+          and set a descriptive alt like "Dr. X, Resident Dentist at Klinik
+          Pergigian Alan Adlan". Real portraits should be 800x1000 (4:5) with
+          consistent framing and a plain light background.
+        -->
 
+        <!-- Real photo: assets/img/team/dr-rusman.jpg (grey blazer) -->
         <article class="flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-card">
-          <img src="assets/img/team/dr-rusman-adlan.jpg"
-               onerror="this.onerror=null;this.src='https://picsum.photos/seed/adlan-dentist-1/800/1000'"
-               alt="Dr. Mohd Rusman Adlan B. A. Rahman, Principal Dentist at Klinik Pergigian Alan Adlan"
+          <img src="assets/img/team/placeholder.svg" alt=""
                width="800" height="1000" loading="lazy"
-               class="aspect-[4/5] w-full object-cover">
+               class="aspect-[4/5] w-full bg-porcelain object-cover">
           <div class="flex flex-1 flex-col p-6">
             <h3 class="font-display text-lg font-semibold leading-snug tracking-[-0.01em] text-ink">Dr. Mohd Rusman Adlan B. A. Rahman</h3>
-            <p class="eyebrow mt-1.5 text-[11px] font-medium uppercase text-gold-deep">Principal Dentist</p>
-            <p class="mt-3 text-[15px]">
-              Leads the clinic and its dental team, and sees patients across general
-              and restorative care.
-            </p>
+            <p class="eyebrow mt-1.5 text-[11px] font-medium uppercase text-gold-deep">Founder &amp; Principal Dentist</p>
           </div>
         </article>
 
+        <!-- Real photo: assets/img/team/dr-syafizah.jpg (hijab) -->
         <article class="flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-card">
-          <img src="assets/img/team/dr-noor-syafizah.jpg"
-               onerror="this.onerror=null;this.src='https://picsum.photos/seed/adlan-dentist-2/800/1000'"
-               alt="Dr. Noor Syafizah, General Dentist at Klinik Pergigian Alan Adlan"
+          <img src="assets/img/team/placeholder.svg" alt=""
                width="800" height="1000" loading="lazy"
-               class="aspect-[4/5] w-full object-cover">
+               class="aspect-[4/5] w-full bg-porcelain object-cover">
           <div class="flex flex-1 flex-col p-6">
             <h3 class="font-display text-lg font-semibold leading-snug tracking-[-0.01em] text-ink">Dr. Noor Syafizah</h3>
-            <p class="eyebrow mt-1.5 text-[11px] font-medium uppercase text-gold-deep">General Dentist</p>
-            <p class="mt-2.5 text-sm text-stone">BDS, University of Malaya (2015)</p>
-            <p class="mt-3 text-[15px]">
-              Special interest in root canal treatment, restorative work and
-              aesthetic dentistry, including composite veneers and smile makeovers.
-            </p>
+            <p class="eyebrow mt-1.5 text-[11px] font-medium uppercase text-gold-deep">Resident Dentist</p>
           </div>
         </article>
 
+        <!-- Real photo: assets/img/team/dr-haidhar.jpg (black suit) -->
         <article class="flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-card">
-          <img src="assets/img/team/dr-ahmad-haidhar.jpg"
-               onerror="this.onerror=null;this.src='https://picsum.photos/seed/adlan-dentist-3/800/1000'"
-               alt="Dr. Ahmad Haidhar Izzuddin, Associate Dentist at Klinik Pergigian Alan Adlan"
+          <img src="assets/img/team/placeholder.svg" alt=""
                width="800" height="1000" loading="lazy"
-               class="aspect-[4/5] w-full object-cover">
+               class="aspect-[4/5] w-full bg-porcelain object-cover">
           <div class="flex flex-1 flex-col p-6">
             <h3 class="font-display text-lg font-semibold leading-snug tracking-[-0.01em] text-ink">Dr. Ahmad Haidhar Izzuddin</h3>
-            <p class="eyebrow mt-1.5 text-[11px] font-medium uppercase text-gold-deep">Associate Dentist</p>
-            <p class="mt-3 text-[15px]">
-              General dentist with a special interest in root canal treatment,
-              alongside everyday check-ups and fillings.
-            </p>
+            <p class="eyebrow mt-1.5 text-[11px] font-medium uppercase text-gold-deep">Resident Dentist</p>
           </div>
         </article>
 
+        <!-- Real photo: assets/img/team/dr-khairuldin.jpg (traditional attire) -->
         <article class="flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-card">
-          <img src="assets/img/team/dr-aiman.jpg"
-               onerror="this.onerror=null;this.src='https://picsum.photos/seed/adlan-dentist-4/800/1000'"
-               alt="Dr. Aiman, Associate Dentist at Klinik Pergigian Alan Adlan"
+          <img src="assets/img/team/placeholder.svg" alt=""
                width="800" height="1000" loading="lazy"
-               class="aspect-[4/5] w-full object-cover">
+               class="aspect-[4/5] w-full bg-porcelain object-cover">
           <div class="flex flex-1 flex-col p-6">
-            <h3 class="font-display text-lg font-semibold leading-snug tracking-[-0.01em] text-ink">Dr. Aiman</h3>
-            <p class="eyebrow mt-1.5 text-[11px] font-medium uppercase text-gold-deep">Associate Dentist</p>
-            <p class="mt-2.5 text-sm text-stone">BDS, Jordan University of Science and Technology</p>
-            <p class="mt-3 text-[15px]">
-              Works with digital dentistry, designing and 3D printing crowns, bridges
-              and dentures in-house to shorten the wait between visits.
-            </p>
+            <h3 class="font-display text-lg font-semibold leading-snug tracking-[-0.01em] text-ink">Dr. Khairuldin Majid</h3>
+            <p class="eyebrow mt-1.5 text-[11px] font-medium uppercase text-gold-deep">Resident Dentist</p>
           </div>
         </article>
 
