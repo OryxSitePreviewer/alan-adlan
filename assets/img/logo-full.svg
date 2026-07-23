@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 268" role="img" aria-label="Klinik Pergigian Alan Adlan">
+  <!--
+    Full stacked lockup: KLINIK PERGIGIAN over the disc mark, with ALAN ADLAN
+    set inside the tooth. Traced from the clinic artwork.
+
+    NOTE: the two inner wordmarks are live <text>, not outlines, so they depend
+    on Playfair Display / Arial being available. That is fine on the website
+    (the font is loaded) but NOT safe for print or for handing to a third party.
+    TODO (client): supply the original vector logo and replace this file. If you
+    need a print-safe version of this file in the meantime, open it in
+    Illustrator or Inkscape and convert both <text> elements to outlines.
+  -->
+  <text x="110" y="26" text-anchor="middle"
+        font-family="'Plus Jakarta Sans', Arial, Helvetica, sans-serif"
+        font-size="25" font-weight="700" letter-spacing="2.4" fill="#C9A227">KLINIK PERGIGIAN</text>
+
+  <g transform="translate(20 48)">
+    <circle cx="90" cy="90" r="90" fill="#C9A227"/>
+    <path fill="#FFFFFF" transform="scale(1.8)"
+          d="M50 13C54 9 60 8 66 10C74 12 84 16 88 26C92 36 88 48 85 60C82 72 80 88 73 92C67 95 63 86 60 76C57 67 54 64 50 64C46 64 43 67 40 76C37 86 33 95 27 92C20 88 18 72 15 60C12 48 8 36 12 26C16 16 26 12 34 10C40 8 46 9 50 13Z"/>
+    <text x="90" y="86" text-anchor="middle"
+          font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+          font-size="40" font-weight="600" letter-spacing="0.5" fill="#C9A227">ALAN</text>
+    <text x="90" y="126" text-anchor="middle"
+          font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+          font-size="40" font-weight="600" letter-spacing="0.5" fill="#C9A227">ADLAN</text>
+  </g>
+</svg>

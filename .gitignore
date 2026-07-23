@@ -1,0 +1,34 @@
+# OS cruft
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+._*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Local Claude Code settings (machine-specific; the shared ones belong in
+# .claude/settings.json if you ever add them)
+.claude/settings.local.json
+
+# Exported 3D models — regenerate these from logo-3d.html rather than
+# committing them. They are large binaries and they change every export.
+*.glb
+*.obj
+*.stl
+
+# Source artwork drops. Keep originals in your own asset store, not the repo,
+# unless they are small and final.
+*.ai
+*.eps
+*.psd
+*.zip
+
+# Logs
+*.log
+npm-debug.log*

@@ -1,0 +1,1020 @@
+﻿<!doctype html>
+<!--
+  Klinik Pergigian Alan Adlan — marketing site
+  Single file. No build step. Open index.html directly in a browser.
+
+  LANGUAGE: lang="en" below.
+  TODO (future): a Malay version. When it is built, serve it at /ms/, set
+  lang="ms" on that copy, and add reciprocal hreflang tags in <head>:
+    <link rel="alternate" hreflang="en" href="https://DOMAIN.my/">
+    <link rel="alternate" hreflang="ms" href="https://DOMAIN.my/ms/">
+-->
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Dentist in Bandar Baru Bangi | Klinik Pergigian Alan Adlan</title>
+<meta name="description" content="Klinik Pergigian Alan Adlan is a dental clinic in Bandar Baru Bangi, Selangor. General dentistry, braces, implants, whitening and scaling. Open 9am to 9pm daily.">
+<meta name="theme-color" content="#C9A227">
+<link rel="canonical" href="https://alanadlandental.com.my/">
+<!-- TODO (client): alanadlandental.com.my is the TEMPORARY placeholder domain. Search
+     and replace it throughout this file once the final domain is confirmed. It appears
+     in: canonical, og:url, og:image, twitter:image, and the JSON-LD "@id" and "url". -->
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Klinik Pergigian Alan Adlan">
+<meta property="og:title" content="Dentist in Bandar Baru Bangi | Klinik Pergigian Alan Adlan">
+<meta property="og:description" content="A dental clinic in Bandar Baru Bangi, Selangor. General dentistry, braces, implants, whitening and scaling. Open 9am to 9pm daily.">
+<meta property="og:url" content="https://alanadlandental.com.my/">
+<meta property="og:locale" content="en_MY">
+<!-- Asset: assets/img/og-share.jpg — 1200x630 JPG. Clinic exterior or reception.
+     Must be an absolute URL; relative paths are ignored by most share scrapers. -->
+<meta property="og:image" content="https://alanadlandental.com.my/assets/img/og-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Reception area at Klinik Pergigian Alan Adlan in Bandar Baru Bangi">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dentist in Bandar Baru Bangi | Klinik Pergigian Alan Adlan">
+<meta name="twitter:description" content="A dental clinic in Bandar Baru Bangi, Selangor. Open 9am to 9pm daily.">
+<meta name="twitter:image" content="https://alanadlandental.com.my/assets/img/og-share.jpg">
+<meta name="twitter:image:alt" content="Reception area at Klinik Pergigian Alan Adlan in Bandar Baru Bangi">
+
+<!-- Favicons. favicon.svg is already built from the logo mark and works today.
+     The raster fallbacks still need exporting — see assets/README.md. -->
+<link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Playfair Display is used ONLY for the "Alan Adlan" wordmark, to echo the serif
+     in the clinic's logo. Everything else stays sans. -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600&family=Inter:wght@400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:        '#1A1614', // warm near-black — headings, footer, text on gold
+          stone:      '#6B625B', // body copy — 5.9:1 on white
+          gold:       '#C9A227', // brand gold — FILLS ONLY, never text on white
+          'gold-deep':'#8A6A12', // gold that is safe as text — 5.1:1 on white
+          porcelain:  '#FAF7F2', // off-white alternating background
+          line:       '#ECE6DC'  // hairlines and card edges
+        },
+        fontFamily: {
+          display: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          body:    ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          brand:   ['"Playfair Display"', 'Georgia', 'Times New Roman', 'serif']
+        },
+        maxWidth: { site: '1200px' },
+        boxShadow: {
+          card:  '0 1px 2px rgba(26,22,20,.04), 0 8px 24px rgba(26,22,20,.06)',
+          lift:  '0 2px 4px rgba(26,22,20,.05), 0 16px 40px rgba(26,22,20,.10)',
+          navbar:'0 1px 0 rgba(236,230,220,.9), 0 8px 24px rgba(26,22,20,.07)'
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  html { -webkit-text-size-adjust: 100%; }
+  body { overflow-x: hidden; }
+
+  /* Sticky header is ~72px; keep it off anchored headings. */
+  section[id] { scroll-margin-top: 88px; }
+
+  /* One focus ring colour that clears 3:1 on white, porcelain AND the ink footer. */
+  :focus-visible {
+    outline: 2px solid #8A6A12;
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
+  .on-dark :focus-visible { outline-color: #C9A227; }
+
+  /* Small tracked eyebrow label. */
+  .eyebrow { letter-spacing: .16em; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto !important; }
+    *, *::before, *::after {
+      animation-duration: .001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+</style>
+
+<!--
+  Structured data. schema.org/Dentist.
+  Geo is the client-supplied pin for Jalan 6/7b: 2.9610, 101.7612.
+  Domain is the temporary placeholder — see the TODO near the canonical tag.
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "@id": "https://alanadlandental.com.my/#clinic",
+  "name": "Klinik Pergigian Alan Adlan",
+  "legalName": "Alan Adlan Dental Group Sdn Bhd",
+  "slogan": "Expert in Dental Services",
+  "url": "https://alanadlandental.com.my/",
+  "image": "https://alanadlandental.com.my/assets/img/og-share.jpg",
+  "telephone": "+60389280903",
+  "email": "kpaa2011@yahoo.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "3, Jalan 6/7b, Seksyen 1",
+    "addressLocality": "Bandar Baru Bangi",
+    "postalCode": "43650",
+    "addressRegion": "Selangor",
+    "addressCountry": "MY"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 2.9610,
+    "longitude": 101.7612
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "09:00",
+    "closes": "21:00"
+  }],
+  "contactPoint": [
+    { "@type": "ContactPoint", "contactType": "reservations", "telephone": "+60389280903", "areaServed": "MY", "availableLanguage": ["en","ms"] },
+    { "@type": "ContactPoint", "contactType": "customer support", "telephone": "+60194231697", "areaServed": "MY", "availableLanguage": ["en","ms"] }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "330",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "sameAs": [
+    "https://www.instagram.com/klinikpergigian.alanadlan",
+    "https://www.tiktok.com/@klinikgigialanadlan",
+    "https://www.facebook.com/kpaa2011/"
+  ],
+  "employee": [
+    { "@type": "Person", "name": "Dr. Mohd Rusman Adlan B. A. Rahman", "jobTitle": "Principal Dentist" },
+    { "@type": "Person", "name": "Dr. Noor Syafizah", "jobTitle": "General Dentist", "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Malaya" } },
+    { "@type": "Person", "name": "Dr. Ahmad Haidhar Izzuddin", "jobTitle": "Associate Dentist" },
+    { "@type": "Person", "name": "Dr. Aiman", "jobTitle": "Associate Dentist", "alumniOf": { "@type": "CollegeOrUniversity", "name": "Jordan University of Science and Technology" } }
+  ],
+  "availableService": [
+    { "@type": "MedicalProcedure", "name": "General Dentistry" },
+    { "@type": "MedicalProcedure", "name": "Braces and Orthodontics" },
+    { "@type": "MedicalProcedure", "name": "Dental Implants" },
+    { "@type": "MedicalProcedure", "name": "Teeth Whitening" },
+    { "@type": "MedicalProcedure", "name": "Crown and Bridge" },
+    { "@type": "MedicalProcedure", "name": "Scaling and Polishing" },
+    { "@type": "MedicalProcedure", "name": "Endodontics" },
+    { "@type": "MedicalProcedure", "name": "Periodontics" },
+    { "@type": "MedicalProcedure", "name": "Oral Surgery" },
+    { "@type": "MedicalProcedure", "name": "Dentures and Dental Prostheses" },
+    { "@type": "MedicalProcedure", "name": "Dental Aesthetics" },
+    { "@type": "MedicalProcedure", "name": "Preventive Dentistry" }
+  ]
+}
+</script>
+</head>
+
+<body class="bg-white font-body text-[16px] md:text-[17px] leading-relaxed text-stone antialiased">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-ink focus:px-5 focus:py-3 focus:text-sm focus:font-medium focus:text-white">Skip to content</a>
+
+<!-- ============================= HEADER ============================= -->
+<header id="site-header" class="sticky top-0 z-50 border-b border-line bg-white transition-shadow duration-300">
+  <div class="mx-auto flex h-[72px] max-w-site items-center justify-between gap-4 px-5 sm:px-6 lg:px-8">
+
+    <!--
+      LOGO LOCKUP — redrawn from the clinic's artwork: a gold disc with a large
+      white molar sitting in it, beside the two-line wordmark. The tooth outline
+      is shared with assets/favicon/favicon.svg and logo-3d.html; if you adjust
+      it, adjust it in all three.
+
+      TODO (client): this is a hand-traced approximation. Send the original
+      vector file (.ai / .eps / .svg) from whoever made the logo and swap the
+      <path> below for the real outline. At small sizes the difference is
+      invisible, but on the 3D model and any print use it will show.
+    -->
+    <a href="#home" class="flex shrink-0 items-center gap-2.5 sm:gap-3" aria-label="Klinik Pergigian Alan Adlan, home">
+      <svg viewBox="0 0 100 100" class="h-9 w-9 shrink-0 sm:h-10 sm:w-10" aria-hidden="true" focusable="false">
+        <circle cx="50" cy="50" r="50" fill="#C9A227"/>
+        <path fill="#FFFFFF" d="M50 13C54 9 60 8 66 10C74 12 84 16 88 26C92 36 88 48 85 60C82 72 80 88 73 92C67 95 63 86 60 76C57 67 54 64 50 64C46 64 43 67 40 76C37 86 33 95 27 92C20 88 18 72 15 60C12 48 8 36 12 26C16 16 26 12 34 10C40 8 46 9 50 13Z"/>
+      </svg>
+      <span class="leading-none">
+        <span class="block font-display text-[8.5px] font-semibold uppercase tracking-[.18em] text-gold-deep sm:text-[9.5px]">Klinik Pergigian</span>
+        <span class="mt-1.5 block font-brand text-[17px] font-semibold leading-none tracking-[.01em] text-ink sm:text-[19px] md:text-[17px] lg:text-[19px]">Alan Adlan</span>
+      </span>
+    </a>
+
+    <!-- Desktop nav (768px and up). Gaps and type tighten at md so the row still
+         fits at exactly 768px, then relax at lg. -->
+    <nav class="hidden items-center gap-3 md:flex lg:gap-7" aria-label="Primary">
+      <a href="#home"     class="whitespace-nowrap text-[13px] font-medium text-ink transition-colors hover:text-gold-deep lg:text-[15px]">Home</a>
+      <a href="#about"    class="whitespace-nowrap text-[13px] font-medium text-ink transition-colors hover:text-gold-deep lg:text-[15px]">About</a>
+      <a href="#team"     class="whitespace-nowrap text-[13px] font-medium text-ink transition-colors hover:text-gold-deep lg:text-[15px]">Dentists</a>
+      <a href="#services" class="whitespace-nowrap text-[13px] font-medium text-ink transition-colors hover:text-gold-deep lg:text-[15px]">Services</a>
+      <a href="#reviews"  class="whitespace-nowrap text-[13px] font-medium text-ink transition-colors hover:text-gold-deep lg:text-[15px]">Reviews</a>
+      <a href="#contact"  class="whitespace-nowrap text-[13px] font-medium text-ink transition-colors hover:text-gold-deep lg:text-[15px]">Contact</a>
+    </nav>
+
+    <a href="https://wasap.my/60194231697/Hi,%20I%20would%20like%20to%20book%20a%20dental%20appointment"
+       class="hidden shrink-0 whitespace-nowrap rounded-full bg-gold px-4 py-2.5 text-[13px] font-semibold text-ink transition-colors hover:bg-gold-deep hover:text-white md:inline-block lg:px-5 lg:text-[14px]">
+      <!-- Short label between 768px and 1023px, where the six nav links leave
+           little room. Full label from lg up. -->
+      <span class="lg:hidden">Book Now</span>
+      <span class="hidden lg:inline">Book Appointment</span>
+    </a>
+
+    <!-- Hamburger (below 768px) -->
+    <button id="menu-toggle" type="button"
+            class="-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-full text-ink md:hidden"
+            aria-controls="mobile-menu" aria-expanded="false">
+      <span class="sr-only">Toggle navigation menu</span>
+      <svg id="icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3.5 7h17M3.5 12h17M3.5 17h17"/></svg>
+      <svg id="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" class="hidden" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+
+  <!-- Mobile panel -->
+  <div id="mobile-menu" class="hidden border-t border-line bg-white md:hidden">
+    <nav class="mx-auto max-w-site px-5 py-4 sm:px-6" aria-label="Mobile">
+      <ul class="flex flex-col">
+        <li><a href="#home"     class="block border-b border-line py-3.5 text-[15px] font-medium text-ink">Home</a></li>
+        <li><a href="#about"    class="block border-b border-line py-3.5 text-[15px] font-medium text-ink">About</a></li>
+        <li><a href="#team"     class="block border-b border-line py-3.5 text-[15px] font-medium text-ink">Dentists</a></li>
+        <li><a href="#services" class="block border-b border-line py-3.5 text-[15px] font-medium text-ink">Services</a></li>
+        <li><a href="#reviews"  class="block border-b border-line py-3.5 text-[15px] font-medium text-ink">Reviews</a></li>
+        <li><a href="#contact"  class="block border-b border-line py-3.5 text-[15px] font-medium text-ink">Contact</a></li>
+      </ul>
+      <a href="https://wasap.my/60194231697/Hi,%20I%20would%20like%20to%20book%20a%20dental%20appointment"
+         class="mt-4 block rounded-full bg-gold px-5 py-3 text-center text-[15px] font-semibold text-ink">
+        Book Appointment
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================= HERO ============================= -->
+  <section id="home" class="relative isolate">
+    <!--
+      Asset: assets/img/hero-clinic.jpg — 1920x1080 (16:9), min 1920px wide.
+      Wide landscape shot of the treatment room or reception, warm light,
+      ideally with a staff member in frame.
+
+      The onerror attribute falls back to a placeholder so the page still previews
+      before the real file is dropped in. DELETE the onerror attribute once
+      assets/img/hero-clinic.jpg exists.
+    -->
+    <img src="assets/img/hero-clinic.jpg"
+         onerror="this.onerror=null;this.src='https://picsum.photos/seed/alanadlan-hero/1920/1080'"
+         alt="Treatment room at Klinik Pergigian Alan Adlan in Bandar Baru Bangi"
+         width="1920" height="1080" fetchpriority="high"
+         class="absolute inset-0 -z-10 h-full w-full object-cover">
+    <div class="absolute inset-0 -z-10 bg-ink/70" aria-hidden="true"></div>
+    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-ink/70 via-ink/50 to-transparent" aria-hidden="true"></div>
+
+    <div class="mx-auto max-w-site px-5 py-20 sm:px-6 md:py-28 lg:px-8 lg:py-36">
+      <div class="max-w-2xl">
+        <p class="eyebrow font-display text-[11px] font-normal uppercase text-white/85 sm:text-xs">Bandar Baru Bangi, Selangor</p>
+        <h1 class="mt-4 font-display text-[clamp(2.25rem,6vw,3.75rem)] font-light leading-[1.08] tracking-[-0.02em] text-white">
+          Expert in Dental Services
+        </h1>
+        <p class="mt-5 max-w-xl text-[17px] text-white/90 md:text-lg">
+          A neighbourhood dental clinic in Seksyen 1, Bangi. We look after everyday
+          check-ups, braces, implants and everything in between, with unhurried
+          appointments and clear explanations before any treatment begins.
+        </p>
+
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+          <a href="https://wasap.my/60194231697/Hi,%20I%20would%20like%20to%20book%20a%20dental%20appointment"
+             class="inline-flex items-center justify-center gap-2.5 rounded-full bg-gold px-7 py-3.5 text-[15px] font-semibold text-ink transition-colors hover:bg-white">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="shrink-0"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.13-1.47-.72-1.69-.8-.23-.09-.39-.13-.56.12-.16.25-.64.8-.78.97-.15.16-.29.18-.53.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.09-.16.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.48-.4-.42-.55-.43h-.47c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.21.88 2.37 1 2.54.13.16 1.74 2.65 4.2 3.72.59.25 1.05.4 1.4.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29Z"/></svg>
+            Book on WhatsApp
+          </a>
+          <a href="tel:+60389280903"
+             class="inline-flex items-center justify-center gap-2.5 rounded-full border border-white/70 px-7 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-white hover:text-ink">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0"><path d="M15.5 21A13.5 13.5 0 0 1 3 8.5 3.5 3.5 0 0 1 6.5 5h1a1.6 1.6 0 0 1 1.6 1.3l.5 2.3a1.6 1.6 0 0 1-.5 1.5l-1 .9a11 11 0 0 0 4.9 4.9l.9-1a1.6 1.6 0 0 1 1.5-.5l2.3.5A1.6 1.6 0 0 1 19 16.5v1A3.5 3.5 0 0 1 15.5 21Z"/></svg>
+            Call 03-8928 0903
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TRUST STRIP ===================== -->
+  <section aria-label="Clinic hours, location and rating" class="border-b border-line bg-porcelain">
+    <div class="mx-auto grid max-w-site gap-6 px-5 py-8 sm:px-6 md:grid-cols-3 md:gap-0 md:py-9 lg:px-8">
+
+      <div class="flex items-start gap-3.5 md:justify-center md:px-6">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8A6A12" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 shrink-0" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 1.8"/></svg>
+        <p class="text-[15px]"><span class="font-medium text-ink">Open daily</span><br class="hidden sm:block"> <span class="text-stone">9:00 AM &ndash; 9:00 PM</span></p>
+      </div>
+
+      <div class="flex items-start gap-3.5 md:justify-center md:border-x md:border-line md:px-6">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8A6A12" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 shrink-0" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+        <p class="text-[15px]"><span class="font-medium text-ink">Seksyen 1, Bangi</span><br class="hidden sm:block"> <span class="text-stone">Jalan 6/7b, 43650 Selangor</span></p>
+      </div>
+
+      <div class="flex items-start gap-3.5 md:justify-center md:px-6">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#C9A227" class="mt-0.5 shrink-0" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.86-4.25 4.14 1 5.85L12 16.9l-5.25 2.75 1-5.85L3.5 9.66l5.9-.86L12 3.5Z"/></svg>
+        <p class="text-[15px]"><span class="font-medium text-ink">4.8 out of 5</span><br class="hidden sm:block"> <span class="text-stone">330+ Google Reviews</span></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================= ABOUT ============================= -->
+  <section id="about" class="bg-white py-14 md:py-20 lg:py-28">
+    <div class="mx-auto grid max-w-site items-center gap-10 px-5 sm:px-6 lg:grid-cols-12 lg:gap-16 lg:px-8">
+
+      <div class="lg:col-span-5">
+        <!--
+          Asset: assets/img/about-team.jpg — 1000x1250 (4:5), min 1000px wide.
+          Portrait shot of the dental team, or a dentist speaking with a patient
+          at the chair. If this becomes a photo of Dr. Mohd Rusman Adlan
+          specifically, update the alt text below to name him.
+
+          DELETE the onerror attribute once assets/img/about-team.jpg exists.
+        -->
+        <img src="assets/img/about-team.jpg"
+             onerror="this.onerror=null;this.src='https://picsum.photos/seed/alanadlan-about/1000/1250'"
+             alt="A member of the dental team speaking with a patient at Klinik Pergigian Alan Adlan"
+             width="1000" height="1250" loading="lazy"
+             class="aspect-[4/5] w-full rounded-2xl object-cover shadow-card">
+      </div>
+
+      <div class="lg:col-span-7">
+        <p class="eyebrow font-display text-[11px] font-normal uppercase text-gold-deep">About the clinic</p>
+        <h2 class="mt-3 font-display text-[clamp(1.75rem,4vw,2.75rem)] font-light leading-[1.15] tracking-[-0.02em] text-ink">
+          Dental care for the Bangi community
+        </h2>
+        <div class="mt-5 max-w-[65ch] space-y-4 text-[16px] md:text-[17px]">
+          <p>
+            Klinik Pergigian Alan Adlan sits on Jalan 6/7b in Seksyen 1, a short drive
+            from most of Bandar Baru Bangi. Our dental team treats families from around
+            the neighbourhood, from young children having their first check-up to
+            adults who have put off a visit for longer than they would like to admit.
+          </p>
+          <p>
+            The clinic is led by our Principal Dentist,
+            <strong class="font-medium text-ink">Dr. Mohd Rusman Adlan B. A. Rahman</strong>,
+            who works alongside the rest of the team across general, orthodontic and
+            restorative care. Many of the people we see were sent by a neighbour, a
+            colleague or a family member who came before them.
+          </p>
+          <p>
+            We keep the clinic open from 9:00 AM to 9:00 PM every day of the week,
+            because dental problems rarely wait for a weekday afternoon. Evening and
+            weekend appointments are available for people who work outside Bangi.
+          </p>
+          <p>
+            Before any treatment starts, your dentist will walk you through what is
+            happening in your mouth, what the options are, and what each one involves.
+            If something can reasonably wait, we will tell you. If you are nervous
+            about the chair, say so when you arrive and we will take it slowly.
+          </p>
+        </div>
+
+        <ul class="mt-8 grid gap-x-8 gap-y-3.5 sm:grid-cols-2">
+          <li class="flex items-start gap-3">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A6A12" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="mt-1 shrink-0" aria-hidden="true"><path d="m4.5 12.5 5 5 10-11"/></svg>
+            <span class="text-[15px] text-ink">Open every day, 9:00 AM to 9:00 PM</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A6A12" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="mt-1 shrink-0" aria-hidden="true"><path d="m4.5 12.5 5 5 10-11"/></svg>
+            <span class="text-[15px] text-ink">Walk-ins welcome when slots allow</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A6A12" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="mt-1 shrink-0" aria-hidden="true"><path d="m4.5 12.5 5 5 10-11"/></svg>
+            <span class="text-[15px] text-ink">Treatment explained before it begins</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A6A12" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="mt-1 shrink-0" aria-hidden="true"><path d="m4.5 12.5 5 5 10-11"/></svg>
+            <span class="text-[15px] text-ink">Booking by WhatsApp or phone</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= OUR DENTISTS =============================
+
+       ==========================================================================
+       TODO (client) — SIGN-OFF REQUIRED BEFORE LAUNCH.
+
+       These four profiles were assembled from social media and public listings,
+       not written by the dentists themselves. Every dentist must read and approve
+       their own card before this page goes live. Names, spelling, qualifications
+       and the university/year lines in particular need first-hand confirmation.
+
+       Wording note: interests are written as "special interest in", never
+       "specialist in". Under Malaysian Dental Council advertising rules,
+       "specialist" is reserved for dentists on the National Specialist Register.
+       Do not change this phrasing without checking each dentist's registration.
+
+       Gaps still to fill:
+         - Dr. Mohd Rusman Adlan: no qualification or focus areas supplied.
+         - Dr. Ahmad Haidhar Izzuddin: no qualification supplied.
+         - Dr. Aiman: confirm full legal name for display.
+         - All four: MDC / Malaysian Dental Council registration numbers, if the
+           clinic wants them shown.
+       ==========================================================================
+  -->
+  <section id="team" class="border-t border-line bg-white py-14 md:py-20 lg:py-28">
+    <div class="mx-auto max-w-site px-5 sm:px-6 lg:px-8">
+
+      <div class="max-w-2xl">
+        <p class="eyebrow font-display text-[11px] font-normal uppercase text-gold-deep">Our dentists</p>
+        <h2 class="mt-3 font-display text-[clamp(1.75rem,4vw,2.75rem)] font-light leading-[1.15] tracking-[-0.02em] text-ink">
+          The team looking after you
+        </h2>
+        <p class="mt-4 text-[16px] md:text-[17px]">
+          Between them, our dentists cover routine care, root canal treatment,
+          orthodontics and digitally made crowns and dentures. Ask at the front desk
+          if you would like to see a particular dentist and we will work around it.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-5 sm:grid-cols-2 md:gap-6 lg:mt-14 lg:grid-cols-4">
+
+        <!-- Photos: assets/img/team/*.jpg — 800x1000 (4:5) portraits, consistent
+             framing and background across all four. Delete each onerror once the
+             real file is in place. -->
+
+        <article class="flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-card">
+          <img src="assets/img/team/dr-rusman-adlan.jpg"
+               onerror="this.onerror=null;this.src='https://picsum.photos/seed/adlan-dentist-1/800/1000'"
+               alt="Dr. Mohd Rusman Adlan B. A. Rahman, Principal Dentist at Klinik Pergigian Alan Adlan"
+               width="800" height="1000" loading="lazy"
+               class="aspect-[4/5] w-full object-cover">
+          <div class="flex flex-1 flex-col p-6">
+            <h3 class="font-display text-lg font-semibold leading-snug tracking-[-0.01em] text-ink">Dr. Mohd Rusman Adlan B. A. Rahman</h3>
+            <p class="eyebrow mt-1.5 text-[11px] font-medium uppercase text-gold-deep">Principal Dentist</p>
+            <p class="mt-3 text-[15px]">
+              Leads the clinic and its dental team, and sees patients across general
+              and restorative care.
+            </p>
+          </div>
+        </article>
+
+        <article class="flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-card">
+          <img src="assets/img/team/dr-noor-syafizah.jpg"
+               onerror="this.onerror=null;this.src='https://picsum.photos/seed/adlan-dentist-2/800/1000'"
+               alt="Dr. Noor Syafizah, General Dentist at Klinik Pergigian Alan Adlan"
+               width="800" height="1000" loading="lazy"
+               class="aspect-[4/5] w-full object-cover">
+          <div class="flex flex-1 flex-col p-6">
+            <h3 class="font-display text-lg font-semibold leading-snug tracking-[-0.01em] text-ink">Dr. Noor Syafizah</h3>
+            <p class="eyebrow mt-1.5 text-[11px] font-medium uppercase text-gold-deep">General Dentist</p>
+            <p class="mt-2.5 text-sm text-stone">BDS, University of Malaya (2015)</p>
+            <p class="mt-3 text-[15px]">
+              Special interest in root canal treatment, restorative work and
+              aesthetic dentistry, including composite veneers and smile makeovers.
+            </p>
+          </div>
+        </article>
+
+        <article class="flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-card">
+          <img src="assets/img/team/dr-ahmad-haidhar.jpg"
+               onerror="this.onerror=null;this.src='https://picsum.photos/seed/adlan-dentist-3/800/1000'"
+               alt="Dr. Ahmad Haidhar Izzuddin, Associate Dentist at Klinik Pergigian Alan Adlan"
+               width="800" height="1000" loading="lazy"
+               class="aspect-[4/5] w-full object-cover">
+          <div class="flex flex-1 flex-col p-6">
+            <h3 class="font-display text-lg font-semibold leading-snug tracking-[-0.01em] text-ink">Dr. Ahmad Haidhar Izzuddin</h3>
+            <p class="eyebrow mt-1.5 text-[11px] font-medium uppercase text-gold-deep">Associate Dentist</p>
+            <p class="mt-3 text-[15px]">
+              General dentist with a special interest in root canal treatment,
+              alongside everyday check-ups and fillings.
+            </p>
+          </div>
+        </article>
+
+        <article class="flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-card">
+          <img src="assets/img/team/dr-aiman.jpg"
+               onerror="this.onerror=null;this.src='https://picsum.photos/seed/adlan-dentist-4/800/1000'"
+               alt="Dr. Aiman, Associate Dentist at Klinik Pergigian Alan Adlan"
+               width="800" height="1000" loading="lazy"
+               class="aspect-[4/5] w-full object-cover">
+          <div class="flex flex-1 flex-col p-6">
+            <h3 class="font-display text-lg font-semibold leading-snug tracking-[-0.01em] text-ink">Dr. Aiman</h3>
+            <p class="eyebrow mt-1.5 text-[11px] font-medium uppercase text-gold-deep">Associate Dentist</p>
+            <p class="mt-2.5 text-sm text-stone">BDS, Jordan University of Science and Technology</p>
+            <p class="mt-3 text-[15px]">
+              Works with digital dentistry, designing and 3D printing crowns, bridges
+              and dentures in-house to shorten the wait between visits.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= SERVICES ============================= -->
+  <section id="services" class="border-y border-line bg-porcelain py-14 md:py-20 lg:py-28">
+    <div class="mx-auto max-w-site px-5 sm:px-6 lg:px-8">
+
+      <div class="max-w-2xl">
+        <p class="eyebrow font-display text-[11px] font-normal uppercase text-gold-deep">What we do</p>
+        <h2 class="mt-3 font-display text-[clamp(1.75rem,4vw,2.75rem)] font-light leading-[1.15] tracking-[-0.02em] text-ink">
+          Our dental services
+        </h2>
+        <p class="mt-4 text-[16px] md:text-[17px]">
+          Routine care and longer-term treatment under one roof, so you are not sent
+          across the Klang Valley for the next step.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-5 sm:grid-cols-2 md:gap-6 lg:mt-14 lg:grid-cols-3">
+
+        <article class="rounded-2xl border border-line bg-white p-7 shadow-card transition-shadow duration-300 hover:shadow-lift">
+          <span class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-gold/15" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8A6A12" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.6c-1.9 0-2.6 1-4.1 1S4.6 6.5 4.6 9.3c0 2.6 1 3.2 1.7 5.5.6 2 .7 3.6 1.8 3.6s1.3-1.7 1.7-3.4c.3-1.3.7-2 1.2-2s.9.7 1.2 2c.4 1.7.6 3.4 1.7 3.4s1.2-1.6 1.8-3.6c.7-2.3 1.7-2.9 1.7-5.5 0-2.8-1.8-3.7-3.3-3.7S13.9 4.6 12 4.6Z"/></svg>
+          </span>
+          <h3 class="font-display text-xl font-semibold tracking-[-0.01em] text-ink">General Dentistry</h3>
+          <p class="mt-2.5 text-[15px] md:text-base">Check-ups, fillings, extractions and the routine care that keeps small problems from turning into big ones.</p>
+        </article>
+
+        <article class="rounded-2xl border border-line bg-white p-7 shadow-card transition-shadow duration-300 hover:shadow-lift">
+          <span class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-gold/15" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8A6A12" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"/><rect x="4" y="9" width="4" height="6" rx="1.2"/><rect x="10" y="9" width="4" height="6" rx="1.2"/><rect x="16" y="9" width="4" height="6" rx="1.2"/></svg>
+          </span>
+          <h3 class="font-display text-xl font-semibold tracking-[-0.01em] text-ink">Braces &amp; Orthodontics</h3>
+          <p class="mt-2.5 text-[15px] md:text-base">Straightening crowded or uneven teeth over time, with regular adjustment visits and a plan agreed up front.</p>
+        </article>
+
+        <article class="rounded-2xl border border-line bg-white p-7 shadow-card transition-shadow duration-300 hover:shadow-lift">
+          <span class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-gold/15" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8A6A12" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4.5h8l-1.4 3H9.4z"/><path d="M9.4 7.5h5.2l-.5 3H9.9z"/><path d="M9.9 10.5h4.2L12 20z"/></svg>
+          </span>
+          <h3 class="font-display text-xl font-semibold tracking-[-0.01em] text-ink">Dental Implants</h3>
+          <p class="mt-2.5 text-[15px] md:text-base">Replacing a missing tooth with a fixed post and crown, so you can chew and speak without a gap.</p>
+        </article>
+
+        <article class="rounded-2xl border border-line bg-white p-7 shadow-card transition-shadow duration-300 hover:shadow-lift">
+          <span class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-gold/15" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8A6A12" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3.5 12.4 7 16 8.4 12.4 9.8 11 13.3 9.6 9.8 6 8.4 9.6 7z"/><path d="M17.5 13.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/><path d="M6.5 15l.6 1.5 1.5.6-1.5.6-.6 1.5-.6-1.5L4.4 17l1.5-.6z"/></svg>
+          </span>
+          <h3 class="font-display text-xl font-semibold tracking-[-0.01em] text-ink">Teeth Whitening</h3>
+          <p class="mt-2.5 text-[15px] md:text-base">Lightening teeth that have stained from coffee, tea or age, after a check that your gums are healthy enough for it.</p>
+        </article>
+
+        <article class="rounded-2xl border border-line bg-white p-7 shadow-card transition-shadow duration-300 hover:shadow-lift">
+          <span class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-gold/15" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8A6A12" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 9.5 6 6l3 3 3-4 3 4 3-3 2.5 3.5-1.5 7.5h-14z"/><path d="M5 17.5h14"/></svg>
+          </span>
+          <h3 class="font-display text-xl font-semibold tracking-[-0.01em] text-ink">Crown &amp; Bridge</h3>
+          <p class="mt-2.5 text-[15px] md:text-base">Rebuilding a broken or heavily filled tooth, or bridging a gap using the healthy teeth on either side.</p>
+        </article>
+
+        <article class="rounded-2xl border border-line bg-white p-7 shadow-card transition-shadow duration-300 hover:shadow-lift">
+          <span class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-gold/15" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8A6A12" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 3.5 20 9l-9.5 9.5H5.5V13z"/><path d="M12.5 5.5 18 11"/><path d="M4 21h16"/></svg>
+          </span>
+          <h3 class="font-display text-xl font-semibold tracking-[-0.01em] text-ink">Scaling &amp; Polishing</h3>
+          <p class="mt-2.5 text-[15px] md:text-base">Clearing away the hardened plaque a toothbrush cannot reach, which is usually where bleeding gums start.</p>
+        </article>
+
+      </div>
+
+      <!-- Secondary treatment list. Source: the clinic's own "Our Services"
+           social post. Keep the six cards above as the headline services and
+           list the rest here so the page stays readable. -->
+      <div class="mt-10 rounded-2xl border border-line bg-white p-7 md:p-8 lg:mt-14">
+        <h3 class="font-display text-lg font-semibold text-ink">We also treat</h3>
+        <ul class="mt-4 grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="flex items-start gap-3">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A6A12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="mt-1 shrink-0" aria-hidden="true"><path d="m4.5 12.5 5 5 10-11"/></svg>
+            <span class="text-[15px] text-ink">Endodontics, or root canal treatment</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A6A12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="mt-1 shrink-0" aria-hidden="true"><path d="m4.5 12.5 5 5 10-11"/></svg>
+            <span class="text-[15px] text-ink">Periodontics, or gum treatment</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A6A12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="mt-1 shrink-0" aria-hidden="true"><path d="m4.5 12.5 5 5 10-11"/></svg>
+            <span class="text-[15px] text-ink">Oral surgery</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A6A12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="mt-1 shrink-0" aria-hidden="true"><path d="m4.5 12.5 5 5 10-11"/></svg>
+            <span class="text-[15px] text-ink">Dentures and dental prostheses</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A6A12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="mt-1 shrink-0" aria-hidden="true"><path d="m4.5 12.5 5 5 10-11"/></svg>
+            <span class="text-[15px] text-ink">Dental aesthetics, including veneers</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A6A12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="mt-1 shrink-0" aria-hidden="true"><path d="m4.5 12.5 5 5 10-11"/></svg>
+            <span class="text-[15px] text-ink">Preventive dentistry for adults and children</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mt-10">
+        <a href="https://wasap.my/60194231697/Hi,%20I%20would%20like%20to%20book%20a%20dental%20appointment"
+           class="inline-flex items-center justify-center rounded-full bg-gold px-7 py-3.5 text-[15px] font-semibold text-ink transition-colors hover:bg-gold-deep hover:text-white">
+          Ask about a treatment on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= REVIEWS ============================= -->
+  <section id="reviews" class="bg-white py-14 md:py-20 lg:py-28">
+    <div class="mx-auto max-w-site px-5 sm:px-6 lg:px-8">
+
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="eyebrow font-display text-[11px] font-normal uppercase text-gold-deep">Patient feedback</p>
+
+        <div class="mt-4 flex items-center justify-center gap-1" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#C9A227"><path d="m12 3.5 2.6 5.3 5.9.86-4.25 4.14 1 5.85L12 16.9l-5.25 2.75 1-5.85L3.5 9.66l5.9-.86L12 3.5Z"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#C9A227"><path d="m12 3.5 2.6 5.3 5.9.86-4.25 4.14 1 5.85L12 16.9l-5.25 2.75 1-5.85L3.5 9.66l5.9-.86L12 3.5Z"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#C9A227"><path d="m12 3.5 2.6 5.3 5.9.86-4.25 4.14 1 5.85L12 16.9l-5.25 2.75 1-5.85L3.5 9.66l5.9-.86L12 3.5Z"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#C9A227"><path d="m12 3.5 2.6 5.3 5.9.86-4.25 4.14 1 5.85L12 16.9l-5.25 2.75 1-5.85L3.5 9.66l5.9-.86L12 3.5Z"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#C9A227"><path d="m12 3.5 2.6 5.3 5.9.86-4.25 4.14 1 5.85L12 16.9l-5.25 2.75 1-5.85L3.5 9.66l5.9-.86L12 3.5Z"/></svg>
+        </div>
+
+        <h2 class="mt-5 font-display text-[clamp(1.75rem,4vw,2.75rem)] font-light leading-[1.15] tracking-[-0.02em] text-ink">
+          Rated 4.8 out of 5 across 330+ Google Reviews
+        </h2>
+        <p class="mt-4 text-[16px] md:text-[17px]">
+          Most of the people who walk through our door were sent by someone in Bangi
+          who came before them. Here is a sample of what patients have said.
+        </p>
+      </div>
+
+      <!--
+        ==========================================================================
+        REAL GOOGLE REVIEWS — supplied by the client, reproduced verbatim.
+        Wording, spelling and grammar are the reviewers' own and must not be
+        edited. Surrounding quotation marks were dropped because the blockquote
+        styling already marks these as quotes.
+
+        Attribution is "Google Reviewer" because the client supplied the reviews
+        without names. Optional: if you want to credit reviewers by name, take
+        the display name straight from the Google listing and replace the <cite>
+        text. Do not invent or shorten names.
+        ==========================================================================
+      -->
+      <div class="mt-10 grid gap-5 md:grid-cols-3 md:gap-6 lg:mt-14">
+
+        <article class="flex flex-col rounded-2xl border border-line bg-porcelain p-7">
+          <div class="flex gap-0.5" aria-label="Rated 5 out of 5">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#C9A227" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.86-4.25 4.14 1 5.85L12 16.9l-5.25 2.75 1-5.85L3.5 9.66l5.9-.86L12 3.5Z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#C9A227" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.86-4.25 4.14 1 5.85L12 16.9l-5.25 2.75 1-5.85L3.5 9.66l5.9-.86L12 3.5Z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#C9A227" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.86-4.25 4.14 1 5.85L12 16.9l-5.25 2.75 1-5.85L3.5 9.66l5.9-.86L12 3.5Z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#C9A227" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.86-4.25 4.14 1 5.85L12 16.9l-5.25 2.75 1-5.85L3.5 9.66l5.9-.86L12 3.5Z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#C9A227" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.86-4.25 4.14 1 5.85L12 16.9l-5.25 2.75 1-5.85L3.5 9.66l5.9-.86L12 3.5Z"/></svg>
+          </div>
+          <blockquote class="mt-4 flex-1 text-[15px] md:text-base">
+            <p>I felt pure comfort when entering this clinic with the warm welcoming
+            feeling from the front desk person. Dr Adlan was fast approached with his
+            professional grin and in depth explanation over my affair that made me
+            fully understand the matter.</p>
+          </blockquote>
+          <footer class="mt-6 border-t border-line pt-4">
+            <cite class="block not-italic text-[15px] font-medium text-ink">Google Reviewer</cite>
+            <span class="text-sm text-stone">Posted on Google</span>
+          </footer>
+        </article>
+
+        <article class="flex flex-col rounded-2xl border border-line bg-porcelain p-7">
+          <div class="flex gap-0.5" aria-label="Rated 5 out of 5">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#C9A227" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.86-4.25 4.14 1 5.85L12 16.9l-5.25 2.75 1-5.85L3.5 9.66l5.9-.86L12 3.5Z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#C9A227" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.86-4.25 4.14 1 5.85L12 16.9l-5.25 2.75 1-5.85L3.5 9.66l5.9-.86L12 3.5Z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#C9A227" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.86-4.25 4.14 1 5.85L12 16.9l-5.25 2.75 1-5.85L3.5 9.66l5.9-.86L12 3.5Z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#C9A227" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.86-4.25 4.14 1 5.85L12 16.9l-5.25 2.75 1-5.85L3.5 9.66l5.9-.86L12 3.5Z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#C9A227" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.86-4.25 4.14 1 5.85L12 16.9l-5.25 2.75 1-5.85L3.5 9.66l5.9-.86L12 3.5Z"/></svg>
+          </div>
+          <blockquote class="mt-4 flex-1 text-[15px] md:text-base">
+            <p>Treatment by Dr Noor Syafizah filled with tender and care made me
+            confident that I was under good hands of her. Excellent service and way
+            to go.</p>
+          </blockquote>
+          <footer class="mt-6 border-t border-line pt-4">
+            <cite class="block not-italic text-[15px] font-medium text-ink">Google Reviewer</cite>
+            <span class="text-sm text-stone">Posted on Google</span>
+          </footer>
+        </article>
+
+        <article class="flex flex-col rounded-2xl border border-line bg-porcelain p-7">
+          <div class="flex gap-0.5" aria-label="Rated 5 out of 5">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#C9A227" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.86-4.25 4.14 1 5.85L12 16.9l-5.25 2.75 1-5.85L3.5 9.66l5.9-.86L12 3.5Z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#C9A227" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.86-4.25 4.14 1 5.85L12 16.9l-5.25 2.75 1-5.85L3.5 9.66l5.9-.86L12 3.5Z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#C9A227" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.86-4.25 4.14 1 5.85L12 16.9l-5.25 2.75 1-5.85L3.5 9.66l5.9-.86L12 3.5Z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#C9A227" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.86-4.25 4.14 1 5.85L12 16.9l-5.25 2.75 1-5.85L3.5 9.66l5.9-.86L12 3.5Z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#C9A227" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.86-4.25 4.14 1 5.85L12 16.9l-5.25 2.75 1-5.85L3.5 9.66l5.9-.86L12 3.5Z"/></svg>
+          </div>
+          <blockquote class="mt-4 flex-1 text-[15px] md:text-base">
+            <p>Friendly staff, nice environment and good service by Dr Adlan.
+            Highly recommended to everyone.</p>
+          </blockquote>
+          <footer class="mt-6 border-t border-line pt-4">
+            <cite class="block not-italic text-[15px] font-medium text-ink">Google Reviewer</cite>
+            <span class="text-sm text-stone">Posted on Google</span>
+          </footer>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= CONTACT ============================= -->
+  <section id="contact" class="border-t border-line bg-porcelain py-14 md:py-20 lg:py-28">
+    <div class="mx-auto max-w-site px-5 sm:px-6 lg:px-8">
+
+      <div class="max-w-2xl">
+        <p class="eyebrow font-display text-[11px] font-normal uppercase text-gold-deep">Visit us</p>
+        <h2 class="mt-3 font-display text-[clamp(1.75rem,4vw,2.75rem)] font-light leading-[1.15] tracking-[-0.02em] text-ink">
+          Contact and location
+        </h2>
+        <p class="mt-4 text-[16px] md:text-[17px]">
+          We are on Jalan 6/7b in Seksyen 1, Bandar Baru Bangi. Message us on WhatsApp
+          or call either line to book a time that suits you.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-8 lg:mt-14 lg:grid-cols-12 lg:gap-12">
+
+        <!-- Details -->
+        <div class="lg:col-span-5">
+          <div class="rounded-2xl border border-line bg-white p-7 shadow-card md:p-8">
+
+            <h3 class="font-display text-lg font-semibold text-ink">Address</h3>
+            <address class="mt-2 not-italic text-[15px] md:text-base">
+              3, Jalan 6/7b, Seksyen 1,<br>
+              43650 Bandar Baru Bangi,<br>
+              Selangor, Malaysia
+            </address>
+
+            <hr class="my-6 border-line">
+
+            <h3 class="font-display text-lg font-semibold text-ink">Opening hours</h3>
+            <p class="mt-2 text-[15px] md:text-base">Monday to Sunday<br>
+              <span class="font-medium text-ink">9:00 AM &ndash; 9:00 PM</span>
+            </p>
+
+            <hr class="my-6 border-line">
+
+            <h3 class="font-display text-lg font-semibold text-ink">Phone</h3>
+            <ul class="mt-2 space-y-2.5">
+              <li>
+                <a href="tel:+60389280903" class="inline-flex items-center gap-2.5 text-[15px] font-medium text-ink transition-colors hover:text-gold-deep md:text-base">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A6A12" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="shrink-0" aria-hidden="true"><path d="M15.5 21A13.5 13.5 0 0 1 3 8.5 3.5 3.5 0 0 1 6.5 5h1a1.6 1.6 0 0 1 1.6 1.3l.5 2.3a1.6 1.6 0 0 1-.5 1.5l-1 .9a11 11 0 0 0 4.9 4.9l.9-1a1.6 1.6 0 0 1 1.5-.5l2.3.5A1.6 1.6 0 0 1 19 16.5v1A3.5 3.5 0 0 1 15.5 21Z"/></svg>
+                  03-8928 0903
+                </a>
+              </li>
+              <li>
+                <a href="tel:+60194231697" class="inline-flex items-center gap-2.5 text-[15px] font-medium text-ink transition-colors hover:text-gold-deep md:text-base">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A6A12" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="shrink-0" aria-hidden="true"><path d="M15.5 21A13.5 13.5 0 0 1 3 8.5 3.5 3.5 0 0 1 6.5 5h1a1.6 1.6 0 0 1 1.6 1.3l.5 2.3a1.6 1.6 0 0 1-.5 1.5l-1 .9a11 11 0 0 0 4.9 4.9l.9-1a1.6 1.6 0 0 1 1.5-.5l2.3.5A1.6 1.6 0 0 1 19 16.5v1A3.5 3.5 0 0 1 15.5 21Z"/></svg>
+                  019-4231697
+                </a>
+              </li>
+            </ul>
+
+            <hr class="my-6 border-line">
+
+            <h3 class="font-display text-lg font-semibold text-ink">Email</h3>
+            <p class="mt-2">
+              <a href="mailto:kpaa2011@yahoo.com" class="break-all text-[15px] font-medium text-ink transition-colors hover:text-gold-deep md:text-base">kpaa2011@yahoo.com</a>
+            </p>
+
+            <a href="https://wasap.my/60194231697/Hi,%20I%20would%20like%20to%20book%20a%20dental%20appointment"
+               class="mt-6 inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-gold px-6 py-3.5 text-[15px] font-semibold text-ink transition-colors hover:bg-gold-deep hover:text-white">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="shrink-0"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.13-1.47-.72-1.69-.8-.23-.09-.39-.13-.56.12-.16.25-.64.8-.78.97-.15.16-.29.18-.53.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.09-.16.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.48-.4-.42-.55-.43h-.47c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.21.88 2.37 1 2.54.13.16 1.74 2.65 4.2 3.72.59.25 1.05.4 1.4.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29Z"/></svg>
+              Message us on WhatsApp
+            </a>
+
+            <hr class="my-6 border-line">
+
+            <h3 class="font-display text-lg font-semibold text-ink">Follow us</h3>
+            <ul class="mt-3 flex flex-wrap gap-2.5">
+              <li>
+                <a href="https://www.instagram.com/klinikpergigian.alanadlan" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink transition-colors hover:border-gold hover:bg-gold/15">
+                  <span class="sr-only">Instagram, @klinikpergigian.alanadlan (opens in a new tab)</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.tiktok.com/@klinikgigialanadlan" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink transition-colors hover:border-gold hover:bg-gold/15">
+                  <span class="sr-only">TikTok, @klinikgigialanadlan (opens in a new tab)</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3h-2.6v12.1a2.4 2.4 0 1 1-2-2.37V10a5.4 5.4 0 1 0 4.6 5.34V9.02a6.3 6.3 0 0 0 3.6 1.13V7.6a3.7 3.7 0 0 1-3.6-3.6V3Z"/></svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/kpaa2011/" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink transition-colors hover:border-gold hover:bg-gold/15">
+                  <span class="sr-only">Facebook, Klinik Pergigian Alan Adlan (opens in a new tab)</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.5l.4-3h-2.9v-1.9c0-.87.24-1.46 1.49-1.46H16.5V4.46A21 21 0 0 0 14.2 4.3c-2.28 0-3.85 1.4-3.85 3.96V10.5H8v3h2.35V21z"/></svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div class="lg:col-span-7">
+          <!--
+            ==================================================================
+            MAP EMBED
+            Pinned to the client-supplied coordinates for Jalan 6/7b:
+            2.9610, 101.7612 — the same pair used in the JSON-LD "geo" block.
+            Keep the two in sync if either changes.
+
+            OPTIONAL UPGRADE: this keyless embed shows an exact pin but no
+            business card. Swapping in the official Place embed adds the
+            clinic's name, rating, photos and a Directions button:
+              1. Open Google Maps and search for Klinik Pergigian Alan Adlan.
+              2. Click the listing, then Share > "Embed a map" > COPY HTML.
+              3. Replace the whole <iframe> below with the copied code.
+              4. Carry these three attributes onto the pasted iframe so it
+                 stays accessible and responsive:
+                    title="Map showing Klinik Pergigian Alan Adlan"
+                    loading="lazy"
+                    class="h-full w-full border-0"
+            ==================================================================
+          -->
+          <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl border border-line bg-white shadow-card lg:aspect-auto lg:h-full lg:min-h-[460px]">
+            <iframe
+              src="https://maps.google.com/maps?q=2.9610,101.7612&amp;z=17&amp;hl=en&amp;output=embed"
+              title="Map showing Klinik Pergigian Alan Adlan, 3 Jalan 6/7b, Seksyen 1, Bandar Baru Bangi"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              class="h-full w-full border-0"></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="on-dark border-t-2 border-gold bg-ink text-white/75">
+  <div class="mx-auto max-w-site px-5 py-12 sm:px-6 md:py-16 lg:px-8">
+    <div class="grid gap-10 md:grid-cols-12 md:gap-8">
+
+      <div class="md:col-span-5">
+        <div class="flex items-center gap-3.5">
+          <svg viewBox="0 0 100 100" class="h-12 w-12 shrink-0" aria-hidden="true">
+            <circle cx="50" cy="50" r="50" fill="#C9A227"/>
+            <path fill="#FFFFFF" d="M50 13C54 9 60 8 66 10C74 12 84 16 88 26C92 36 88 48 85 60C82 72 80 88 73 92C67 95 63 86 60 76C57 67 54 64 50 64C46 64 43 67 40 76C37 86 33 95 27 92C20 88 18 72 15 60C12 48 8 36 12 26C16 16 26 12 34 10C40 8 46 9 50 13Z"/>
+          </svg>
+          <span class="leading-none">
+            <span class="block font-display text-[10px] font-semibold uppercase tracking-[.18em] text-gold">Klinik Pergigian</span>
+            <span class="mt-1.5 block font-brand text-[22px] font-semibold leading-none text-white">Alan Adlan</span>
+            <span class="mt-2 block text-sm text-white/70">Expert in Dental Services</span>
+          </span>
+        </div>
+        <p class="mt-5 max-w-sm text-[15px] text-white/75">
+          A dental clinic in Seksyen 1, Bandar Baru Bangi, open every day from
+          9:00 AM to 9:00 PM.
+        </p>
+      </div>
+
+      <nav class="md:col-span-3" aria-label="Footer">
+        <h2 class="font-display text-sm font-semibold uppercase tracking-[.12em] text-white">Quick links</h2>
+        <ul class="mt-4 space-y-2.5 text-[15px]">
+          <li><a href="#home"     class="text-white/75 transition-colors hover:text-gold">Home</a></li>
+          <li><a href="#about"    class="text-white/75 transition-colors hover:text-gold">About</a></li>
+          <li><a href="#team"     class="text-white/75 transition-colors hover:text-gold">Dentists</a></li>
+          <li><a href="#services" class="text-white/75 transition-colors hover:text-gold">Services</a></li>
+          <li><a href="#reviews"  class="text-white/75 transition-colors hover:text-gold">Reviews</a></li>
+          <li><a href="#contact"  class="text-white/75 transition-colors hover:text-gold">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="md:col-span-4">
+        <h2 class="font-display text-sm font-semibold uppercase tracking-[.12em] text-white">Get in touch</h2>
+        <address class="mt-4 not-italic text-[15px] text-white/75">
+          3, Jalan 6/7b, Seksyen 1,<br>
+          43650 Bandar Baru Bangi,<br>
+          Selangor, Malaysia
+        </address>
+        <ul class="mt-4 space-y-1.5 text-[15px]">
+          <li><a href="tel:+60389280903" class="text-white/75 transition-colors hover:text-gold">03-8928 0903</a></li>
+          <li><a href="tel:+60194231697" class="text-white/75 transition-colors hover:text-gold">019-4231697</a></li>
+          <li><a href="mailto:kpaa2011@yahoo.com" class="break-all text-white/75 transition-colors hover:text-gold">kpaa2011@yahoo.com</a></li>
+        </ul>
+
+        <ul class="mt-5 flex flex-wrap gap-2.5">
+          <li>
+            <a href="https://www.instagram.com/klinikpergigian.alanadlan" target="_blank" rel="noopener noreferrer"
+               class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/25 text-white transition-colors hover:border-gold hover:text-gold">
+              <span class="sr-only">Instagram, @klinikpergigian.alanadlan (opens in a new tab)</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.tiktok.com/@klinikgigialanadlan" target="_blank" rel="noopener noreferrer"
+               class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/25 text-white transition-colors hover:border-gold hover:text-gold">
+              <span class="sr-only">TikTok, @klinikgigialanadlan (opens in a new tab)</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3h-2.6v12.1a2.4 2.4 0 1 1-2-2.37V10a5.4 5.4 0 1 0 4.6 5.34V9.02a6.3 6.3 0 0 0 3.6 1.13V7.6a3.7 3.7 0 0 1-3.6-3.6V3Z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/kpaa2011/" target="_blank" rel="noopener noreferrer"
+               class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/25 text-white transition-colors hover:border-gold hover:text-gold">
+              <span class="sr-only">Facebook, Klinik Pergigian Alan Adlan (opens in a new tab)</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.5l.4-3h-2.9v-1.9c0-.87.24-1.46 1.49-1.46H16.5V4.46A21 21 0 0 0 14.2 4.3c-2.28 0-3.85 1.4-3.85 3.96V10.5H8v3h2.35V21z"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 flex flex-col gap-2 border-t border-white/15 pt-6 sm:flex-row sm:items-center sm:justify-between">
+      <p class="text-sm text-white/65">&copy; <span id="year">2026</span> Klinik Pergigian Alan Adlan. All rights reserved.</p>
+      <p class="text-sm text-white/65">Alan Adlan Dental Group Sdn Bhd &middot; SSM 1323843-D</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---- Mobile menu ---------------------------------------------------- */
+  var toggle    = document.getElementById('menu-toggle');
+  var menu      = document.getElementById('mobile-menu');
+  var iconOpen  = document.getElementById('icon-open');
+  var iconClose = document.getElementById('icon-close');
+
+  function setMenu(open) {
+    menu.classList.toggle('hidden', !open);
+    iconOpen.classList.toggle('hidden', open);
+    iconClose.classList.toggle('hidden', !open);
+    toggle.setAttribute('aria-expanded', String(open));
+  }
+
+  toggle.addEventListener('click', function () {
+    setMenu(toggle.getAttribute('aria-expanded') !== 'true');
+  });
+
+  // Close after picking a destination.
+  menu.addEventListener('click', function (e) {
+    if (e.target.closest('a')) setMenu(false);
+  });
+
+  // Escape closes and returns focus to the toggle.
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+      setMenu(false);
+      toggle.focus();
+    }
+  });
+
+  // Never leave the panel open when we cross into desktop layout.
+  window.matchMedia('(min-width: 768px)').addEventListener('change', function (e) {
+    if (e.matches) setMenu(false);
+  });
+
+  /* ---- Navbar scroll state -------------------------------------------- */
+  var header = document.getElementById('site-header');
+  var ticking = false;
+
+  function syncHeader() {
+    header.classList.toggle('shadow-navbar', window.scrollY > 12);
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(syncHeader);
+    }
+  }, { passive: true });
+
+  syncHeader();
+
+  /* ---- Footer year ----------------------------------------------------- */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* Smooth scrolling is CSS (`scroll-smooth` + the reduced-motion override),
+     so no JS is needed for it and prefers-reduced-motion is honoured. */
+})();
+</script>
+
+</body>
+</html>
