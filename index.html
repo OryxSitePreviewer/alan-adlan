@@ -268,17 +268,19 @@
   <!-- ============================= HERO ============================= -->
   <section id="home" class="relative isolate">
     <!--
-      Asset: assets/img/hero-clinic.jpg — the clinic's actual storefront at dusk,
-      the gold tooth signboard lit against the sky. Downsized from the original in
-      assets/img/source/storefront-original.png.
+      Asset: assets/img/hero-clinic.jpg — a stylised storefront image chosen by the
+      client. NOTE: this is an AI-generated (Google Gemini) rendering of the
+      shopfront, not a photograph of the actual building; the master is
+      assets/img/source/ALanAdlanStorefront2.png. Cropped to a wide band showing the
+      sky, "KLINIK PERGIGIAN" and the gold logo, with the watermarked lower portion
+      removed. If you later want a real photo here, drop it in at this same path.
 
-      The image is a bright sunset shot, so the text sits over a deliberately heavy
-      ink scrim (measured: the brightest pixel in the text zone needs ~78% coverage
-      to keep white body text at WCAG AA; the layered scrim below clears that).
+      Bright sunset shot, so the text sits over a deliberately heavy ink scrim;
+      measured worst-case white-text contrast over it is ~14:1 (WCAG AA needs 4.5).
     -->
     <img src="assets/img/hero-clinic.jpg"
-         alt="The Klinik Pergigian Alan Adlan storefront in Bandar Baru Bangi, its gold tooth-shaped signboard lit against the evening sky"
-         width="1920" height="934" fetchpriority="high"
+         alt="The Klinik Pergigian Alan Adlan shopfront, its gold tooth-shaped signboard lit against an evening sky"
+         width="1376" height="1300" fetchpriority="high"
          class="absolute inset-0 -z-10 h-full w-full object-cover object-center">
     <div class="absolute inset-0 -z-10 bg-ink/65" aria-hidden="true"></div>
     <div class="absolute inset-0 -z-10 bg-gradient-to-r from-ink/90 via-ink/65 to-ink/25" aria-hidden="true"></div>
