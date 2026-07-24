@@ -268,19 +268,16 @@
   <!-- ============================= HERO ============================= -->
   <section id="home" class="relative isolate">
     <!--
-      Asset: assets/img/hero-clinic.jpg — a stylised storefront image chosen by the
-      client. NOTE: this is an AI-generated (Google Gemini) rendering of the
-      shopfront, not a photograph of the actual building; the master is
-      assets/img/source/ALanAdlanStorefront2.png. Cropped to a wide band showing the
-      sky, "KLINIK PERGIGIAN" and the gold logo, with the watermarked lower portion
-      removed. If you later want a real photo here, drop it in at this same path.
+      Asset: assets/img/hero-clinic.jpg — the clinic's real storefront photo at dusk,
+      the gold tooth signboard against the sky. Downsized from the master in
+      assets/img/source/ClinicAAstorefront.png.
 
       Bright sunset shot, so the text sits over a deliberately heavy ink scrim;
-      measured worst-case white-text contrast over it is ~14:1 (WCAG AA needs 4.5).
+      measured worst-case white-text contrast over it is ~13:1 (WCAG AA needs 4.5).
     -->
     <img src="assets/img/hero-clinic.jpg"
-         alt="The Klinik Pergigian Alan Adlan shopfront, its gold tooth-shaped signboard lit against an evening sky"
-         width="1376" height="1300" fetchpriority="high"
+         alt="The Klinik Pergigian Alan Adlan storefront in Bandar Baru Bangi, its gold tooth-shaped signboard lit against the evening sky"
+         width="1920" height="934" fetchpriority="high"
          class="absolute inset-0 -z-10 h-full w-full object-cover object-center">
     <div class="absolute inset-0 -z-10 bg-ink/65" aria-hidden="true"></div>
     <div class="absolute inset-0 -z-10 bg-gradient-to-r from-ink/90 via-ink/65 to-ink/25" aria-hidden="true"></div>
@@ -341,17 +338,15 @@
 
       <div class="lg:col-span-5">
         <!--
-          Asset: assets/img/about-team.jpg — 1000x1250 (4:5), min 1000px wide.
-          Portrait shot of the dental team, or a dentist speaking with a patient
-          at the chair. If this becomes a photo of Dr. Mohd Rusman Adlan
-          specifically, update the alt text below to name him.
-
-          DELETE the onerror attribute once assets/img/about-team.jpg exists.
+          Asset: assets/img/about-logo.jpg — the cropped clinic-logo image (the gold
+          ALAN ADLAN tooth signboard), sourced from the AI storefront rendering.
+          Placed here at the client's request in place of a stock photo. Swap the
+          src for a real team/clinic portrait (4:5, ~1000px wide) if one becomes
+          available.
         -->
-        <img src="assets/img/about-team.jpg"
-             onerror="this.onerror=null;this.src='https://picsum.photos/seed/alanadlan-about/1000/1250'"
-             alt="A member of the dental team speaking with a patient at Klinik Pergigian Alan Adlan"
-             width="1000" height="1250" loading="lazy"
+        <img src="assets/img/about-logo.jpg"
+             alt="The gold Alan Adlan tooth-shaped signboard at Klinik Pergigian Alan Adlan"
+             width="1376" height="1300" loading="lazy"
              class="aspect-[4/5] w-full rounded-2xl object-cover shadow-card">
       </div>
 
