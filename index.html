@@ -88,8 +88,22 @@
 </script>
 
 <style>
-  html { -webkit-text-size-adjust: 100%; }
+  html { -webkit-text-size-adjust: 100%; background-color: #FAF7F2; }
   body { overflow-x: hidden; }
+
+  /* Fixed, faint brand watermark behind the whole page. A position:fixed
+     pseudo-element (more reliable on mobile than background-attachment:fixed).
+     The content sections are made slightly translucent so this shows through;
+     it stays put while the page scrolls. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: url("assets/img/bg-logo.jpg") center center / min(74vmin, 640px) no-repeat;
+    opacity: .22;
+    pointer-events: none;
+  }
 
   /* Sticky header is ~72px; keep it off anchored headings. */
   section[id] { scroll-margin-top: 88px; }
@@ -192,7 +206,7 @@
 </script>
 </head>
 
-<body class="bg-white font-body text-[16px] md:text-[17px] leading-relaxed text-stone antialiased">
+<body class="font-body text-[16px] md:text-[17px] leading-relaxed text-stone antialiased">
 
 <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-ink focus:px-5 focus:py-3 focus:text-sm focus:font-medium focus:text-white">Skip to content</a>
 
@@ -311,7 +325,7 @@
   </section>
 
   <!-- ===================== TRUST STRIP ===================== -->
-  <section aria-label="Clinic hours, location and rating" class="border-b border-line bg-porcelain">
+  <section aria-label="Clinic hours, location and rating" class="border-b border-line bg-porcelain/70">
     <div class="mx-auto grid max-w-site gap-6 px-5 py-8 sm:px-6 md:grid-cols-3 md:gap-0 md:py-9 lg:px-8">
 
       <div class="flex items-start gap-3.5 md:justify-center md:px-6">
@@ -333,7 +347,7 @@
   </section>
 
   <!-- ============================= ABOUT ============================= -->
-  <section id="about" class="bg-white py-14 md:py-20 lg:py-28">
+  <section id="about" class="bg-white/70 py-14 md:py-20 lg:py-28">
     <div class="mx-auto grid max-w-site items-center gap-10 px-5 sm:px-6 lg:grid-cols-12 lg:gap-16 lg:px-8">
 
       <div class="lg:col-span-5">
@@ -410,7 +424,7 @@
        rest, per the clinic. Photos default to a neutral silhouette placeholder;
        swap each card's <img src> to the real assets/img/team/dr-*.jpg once added.
   -->
-  <section id="team" class="border-t border-line bg-white py-14 md:py-20 lg:py-28">
+  <section id="team" class="border-t border-line bg-white/70 py-14 md:py-20 lg:py-28">
     <div class="mx-auto max-w-site px-5 sm:px-6 lg:px-8">
 
       <div class="max-w-2xl">
@@ -487,7 +501,7 @@
   </section>
 
   <!-- ============================= SERVICES ============================= -->
-  <section id="services" class="border-y border-line bg-porcelain py-14 md:py-20 lg:py-28">
+  <section id="services" class="border-y border-line bg-porcelain/70 py-14 md:py-20 lg:py-28">
     <div class="mx-auto max-w-site px-5 sm:px-6 lg:px-8">
 
       <div class="max-w-2xl">
@@ -596,7 +610,7 @@
   </section>
 
   <!-- ============================= REVIEWS ============================= -->
-  <section id="reviews" class="bg-white py-14 md:py-20 lg:py-28">
+  <section id="reviews" class="bg-white/70 py-14 md:py-20 lg:py-28">
     <div class="mx-auto max-w-site px-5 sm:px-6 lg:px-8">
 
       <div class="mx-auto max-w-2xl text-center">
@@ -700,7 +714,7 @@
        before/after composite (whitening = top/bottom, braces = left/right).
        TODO (client): confirm you hold the patients' written consent to publish
        these clinical photos before launch. -->
-  <section id="results" class="border-t border-line bg-white py-14 md:py-20 lg:py-28">
+  <section id="results" class="border-t border-line bg-white/70 py-14 md:py-20 lg:py-28">
     <div class="mx-auto max-w-site px-5 sm:px-6 lg:px-8">
       <div class="max-w-2xl">
         <p class="eyebrow font-display text-[11px] font-normal uppercase text-gold-deep">Our work</p>
@@ -737,7 +751,7 @@
   </section>
 
   <!-- ============================= CONTACT ============================= -->
-  <section id="contact" class="border-t border-line bg-porcelain py-14 md:py-20 lg:py-28">
+  <section id="contact" class="border-t border-line bg-porcelain/70 py-14 md:py-20 lg:py-28">
     <div class="mx-auto max-w-site px-5 sm:px-6 lg:px-8">
 
       <div class="max-w-2xl">
